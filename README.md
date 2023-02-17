@@ -18,7 +18,7 @@ CREATE USER 'govtech'@'localhost' IDENTIFIED BY '00B5Rp8DV';
 ```
 GRANT ALL ON govtech_assessment.* TO 'govtech'@'localhost';
 ```
-4. Copy and paste the shared `.env` file  into the project's root directory.
+4. Copy and paste the `.env` file shared through email into the project's root directory.
 
 5. If any of the database details were changed, update the `.env` file accordingly.
 
@@ -28,6 +28,7 @@ GRANT ALL ON govtech_assessment.* TO 'govtech'@'localhost';
 ```
 go run main.go
 ```
+8. If interested, visit the auth-api branch to try out the api with JWT authentication.
 
 # How to run the tests
 1. Assuming that your current working directory is at the project's root directory, use this command to run the tests:
