@@ -4,6 +4,7 @@ import (
 	"fiber-api/utils/types"
 
 	"github.com/gofiber/fiber/v2"
+	jwtware "github.com/gofiber/jwt/v3"
 )
 
 func Setup(app *fiber.App, config types.Config) {
@@ -15,9 +16,9 @@ func Setup(app *fiber.App, config types.Config) {
 	auth.Post("/register", RegisterTeacher)
 
 	// // authenticated routes
-	// api.Use(jwtware.New(jwtware.Config{
-	// 	SigningKey: []byte(config.App.AccessTokenSecret),
-	// }))
+	api.Use(jwtware.New(jwtware.Config{
+		SigningKey: []byte(config.App.AccessTokenSecret),
+	}))
 	api.Post("/register", TeacherAssignment)
 	api.Get("/commonstudents", CommonStudents)
 	api.Post("/suspend", SuspendStudent)
